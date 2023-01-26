@@ -1,0 +1,38 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+section,
+.section,
+article {
+  margin-block: var(--section-pb, max(8vh, 4rem));
+}
+
+article > * + * {
+  margin-block-start: 1em;
+}
+
+#footer {
+  margin-block-start: auto;
+  padding-block: 2vmin;
+  position: relative;
+
+  background-image: radial-gradient(
+    ellipse at center 100%,
+    var(--primary),
+    hsla(0deg, 0%, 100%, 0) 85%
+  );
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 1px;
+
+  > * {
+    font-size: 0.9rem;
+  }
+}

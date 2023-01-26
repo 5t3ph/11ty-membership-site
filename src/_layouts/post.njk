@@ -1,0 +1,13 @@
+---
+layout: base.njk
+templateEngineOverride: njk, md
+---
+
+<header>
+  <h1>{{ title }}</h1>
+</header>
+<main>
+  <article class="container">
+    {{ content | safe }}
+  </article>
+</main>

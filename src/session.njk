@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Please wait...</title>
+  <style>body { font-family: system-ui; margin: 2rem; text-align: center; background-color: #f9f9f9; }</style>
+</head>
+<body>
+  <div id="error-message"></div>
+  
+  {% include "auth/supabase-cdn.njk" %}
+  <script>
+    {% include "auth/supabase.njk" %}
+    {% include "auth/js/session.js" %}
+  </script>
+
+  <script>
+    setTimeout(() => {
+      if (!window.user) {
+        window.location = '/';
+      }
+    }, 5000);
+  </script> 
+</body>
+</html>

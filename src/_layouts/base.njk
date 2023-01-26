@@ -1,0 +1,46 @@
+{%- set pageTitle %}{% if title and page.url != '/' %}{{ title }} | {% endif %}{{ meta.siteName }}{% endset -%}
+{%- set pageDescription %}{% if description %}{{ description }}{% else %}{{ meta.description }}{% endif %}{% endset -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="dark light" />
+	<meta name="generator" content="{{ eleventy.generator }}">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}" />
+	<link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
+</head>
+<body>
+	{% include "components/navigation.njk" %}
+	
+	{{ content | safe }}
+
+	<footer id="footer" class="container">
+		<p>&copy; {% year %} <a href="/">{{ meta.siteName }}</a> • An 11ty theme by Stephanie Eckles</p>
+	</footer>
+
+{% set supabaseCDN %}
+{% include "auth/supabase-cdn.njk" %}
+{% endset %}
+
+{% set signoutScript %}
+{% include "auth/supabase.njk" %}
+{% include "auth/js/signoutbtn.js" %}
+{% endset %}
+
+{% edge "njk", { supabaseCDN: supabaseCDN, signoutScript: signoutScript} %}
+{% if isUser %}
+{{ supabaseCDN | safe }}
+<script>
+  {{ signoutScript | safe }}
+</script>
+{% endif %}
+{% endedge %}
+
+</body>
+</html>

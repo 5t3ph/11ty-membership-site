@@ -1,0 +1,11 @@
+.card {
+  padding: clamp(1rem, 5%, 3rem);
+  background-image: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 100%, 2%) 45%,
+    var(--primary-bg-gradient)
+  );
+  box-shadow: 0 0 0 2px hsla(var(--primary-hue), 80%, 45%, 12%);
+  border-radius: 1rem;
+  outline: 1px solid transparent;
+}

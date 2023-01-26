@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img[width] {
+  height: auto;
+}
+
+svg {
+  fill: currentColor;
+  pointer-events: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:is(a, button, .button, input, textarea, summary):focus-visible {
+  --_outline-size: 0.15em;
+
+  outline: var(--outline-size, var(--_outline-size)) var(--outline-style, solid)
+    var(--outline-color, currentColor);
+  outline-offset: var(
+    --outline-offset,
+    var(--outline-size, var(--_outline-size))
+  );
+}
+
+a:not([class]) {
+  border-radius: 0.08em;
+  color: var(--primary);
+}

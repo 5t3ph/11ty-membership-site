@@ -1,0 +1,67 @@
+label {
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+input,
+textarea {
+  border: 1px solid #797979;
+  background-color: var(--surface);
+  color: var(--ink);
+  border-radius: 0.25rem;
+  padding: 0.25em 0.5em;
+}
+
+input,
+.button {
+  min-height: 2.25rem;
+}
+
+.form-group-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  @media (min-width: 80ch) {
+    flex-wrap: nowrap;
+  }
+}
+
+/* 
+ * Login Form 
+ */
+
+#login {
+  margin-block-start: 8vh;
+  display: grid;
+  justify-items: center;
+}
+
+#login-form {
+  h2 {
+    --h2-size: 1.65rem;
+
+    max-width: 20ch;
+    margin-inline: auto;
+  }
+
+  .button {
+    white-space: nowrap;
+  }
+
+  + * {
+    margin-block-start: 1rem;
+  }
+}
+
+#login-message {
+  font-size: 1.15rem;
+  max-width: 30ch;
+
+  &:focus {
+    outline: 1px dashed currentColor;
+    outline-offset: 5px;
+  }
+}

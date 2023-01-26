@@ -1,0 +1,18 @@
+<aside id="login" class="container">
+  <form id="login-form" class="card text-center">
+    <h2>{{ loginHeadline or "Join or Login" }}</h2>
+    <div id="login-fields" class="form-group-inline">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+      <button type="submit" class="button">Get Magic Link</button>
+    </div>
+    <p id="login-message"></p>
+  </form>
+  {{ loginFormContent | safe }}
+</aside>
+
+{% include "auth/supabase-cdn.njk" %}
+<script>
+  {% include "auth/supabase.njk" %}
+  {% include "auth/js/loginform.js" %}
+</script>

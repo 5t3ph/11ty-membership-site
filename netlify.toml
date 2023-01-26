@@ -1,0 +1,18 @@
+[dev]
+command = "npm start"
+
+[build]
+publish = "public"
+command = "npm run build"
+
+[[edge_functions]]
+path = "/access/*"
+function = "login"
+
+[[edge_functions]]
+path = "/signout"
+function = "signout"
+
+[[edge_functions]]
+path = "/*"
+function = "eleventy-edge"

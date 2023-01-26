@@ -1,0 +1,55 @@
+header {
+  display: grid;
+  place-content: center;
+  padding: 15vh 3vmax 8vh;
+  text-align: center;
+  overflow: hidden;
+  background-image: radial-gradient(
+      ellipse at center 100%,
+      hsl(0 0% 90%),
+      hsla(0deg, 0%, 100%, 0) 50%
+    ),
+    radial-gradient(
+      ellipse at center 100%,
+      var(--primary-bg-gradient),
+      hsla(0deg, 0%, 100%, 0) 65%
+    );
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 1px, 100% 25vh;
+
+  > * {
+    max-width: 30ch;
+    margin-inline: auto;
+  }
+
+  h1 {
+    transform: translateY(33%);
+    opacity: 0.45;
+    animation: enter 380ms 100ms ease-in forwards;
+  }
+
+  p {
+    font-size: clamp(1.15rem, 2vw + 0.75rem, 1.45rem);
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+
+    + p {
+      margin-block-start: 0.5em;
+    }
+
+    > small {
+      font-size: 0.65em;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+    }
+  }
+}
+
+@keyframes enter {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

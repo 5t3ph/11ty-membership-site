@@ -1,0 +1,14 @@
+{% set loginform %}
+{% set loginHeadline = "To continue reading, join or login" %}
+{% include "components/loginform.njk" %}
+{% endset %}
+
+{% edge "njk, md", { premium: premium, loginform: loginform } %}
+  {% if premium %}
+    {% if isUser %}
+      {{ premium }}
+    {% else %}
+      {{ loginform | safe }}
+    {% endif %}
+  {% endif %}
+{% endedge %}

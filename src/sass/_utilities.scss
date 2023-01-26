@@ -1,0 +1,36 @@
+.container {
+  width: min(100% - 3rem, var(--container-max, 80ch));
+  margin-inline: auto;
+}
+
+.container-centered {
+  width: fit-content;
+  padding-inline: 1.5rem;
+  margin-inline: auto;
+}
+
+.layout-grid {
+  --grid-min: 15ch;
+  --grid-gap: 1rem;
+
+  display: grid;
+  grid-gap: var(--grid-gap);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--grid-min)), 1fr)
+  );
+}
+
+.layout-columns {
+  columns: 2;
+  column-gap: var(--column-gap, 3vmax);
+  column-width: 20ch;
+
+  > * {
+    break-inside: avoid;
+  }
+}
+
+.text-center {
+  text-align: center;
+}

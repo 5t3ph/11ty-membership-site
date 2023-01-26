@@ -1,0 +1,29 @@
+.button {
+  --outline-color: var(--primary);
+
+  border: 1px solid transparent;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border-radius: 0.25rem;
+  padding: 0.5em 0.75em;
+  line-height: 1.1;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+
+  &--small {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  &--large {
+    font-size: 1.25rem;
+  }
+
+  &:is(:disabled, .disabled) {
+    cursor: not-allowed;
+    opacity: 0.45;
+    filter: grayscale(0.5);
+  }
+}

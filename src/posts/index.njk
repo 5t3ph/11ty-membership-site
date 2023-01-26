@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: Posts
+eleventyExcludeFromCollections: true
+---
+
+<header>
+  <h1>{{ title }}</h1>
+</header>
+<main class="container">
+  {% for post in collections.posts %}
+    <article class="excerpt">
+      <h2><a href="{{ post.page.url }}">{{ post.data.title }}</a></h2>
+      <p>{{ post.content | excerpt | safe }}</p>
+    </article>
+  {% endfor %}
+</main>

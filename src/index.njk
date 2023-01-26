@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: 11ty Membership Site
+---
+
+<header>
+  <h1>{{ title }}</h1>
+  <p>{{ meta.description }}</p>
+  <p><small><em>Requires Netlify and Supabase</em></small></p>
+</header>
+
+{% set loginform %}
+{% set loginFormContent %}
+<p class="text-center">Check out this <a href="/posts/post-preview/">post preview</a>!</p>
+{% endset %}
+{% include "components/loginform.njk" %}
+{% endset %}
+
+{% edge "njk", {loginform: loginform} %}
+  {% if isUser %}
+    <aside class="section text-center">
+      <a href="/posts/" class="button button--large">Posts Archive</a>
+    </aside>
+  {% else %}
+    {{ loginform | safe }}
+  {% endif %}
+{% endedge %}
+
+<main>
+  <section class="container-centered">
+    <h2>Uses for this 11ty theme</h2>
+    <ul class="layout-columns">
+      <li>Authentication for members-only pages</li>
+      <li>Creating a custom course platform</li>
+      <li>Premium or freemium content</li>
+      <li>Restricting access for digital downloads</li>
+      <li>Locking exclusive member perks</li>
+      <li>+ more!</li>
+    </ul>
+  </section>
+</main>

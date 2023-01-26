@@ -1,0 +1,36 @@
+nav {
+  display: flex;
+  gap: 0.5rem 2rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-block: 2vmin;
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+    text-underline-offset: 0.2em;
+    transition: color 120ms ease-in;
+
+    &:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+  }
+}
+
+#site_id {
+  font-size: 1.15rem;
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.5rem 2rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-inline-start: auto;
+
+  .greeting {
+    font-size: 0.9rem;
+  }
+}

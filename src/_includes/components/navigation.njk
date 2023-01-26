@@ -1,0 +1,17 @@
+<nav class="container">
+  {% if page.url != '/' %}
+    <a href="/" id="site_id">
+      {{ meta.siteName }}
+    </a>
+  {% endif %}
+
+  {% edge "njk" %}
+    {% if isUser %}
+      <div class="user-actions">
+        <p class="greeting">Welcome back!</p>
+
+        <button id="signout" class="button button--small" type="button">Sign Out</button>
+      </div>
+    {% endif %}
+  {% endedge %}
+</nav>
